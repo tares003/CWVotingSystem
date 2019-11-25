@@ -24,3 +24,8 @@ class Student:
     def set_has_registered(self, has_registered):
         self.__has_registered = has_registered
 
+class gsu_officers(Student): 
+   def __init__(self, petitionRunng):
+        self.
+    
+    
