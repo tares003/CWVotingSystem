@@ -26,6 +26,5 @@ class Student:
 
 class gsu_officers(Student): 
    def __init__(self, petitionRunng):
-        self.
     
     

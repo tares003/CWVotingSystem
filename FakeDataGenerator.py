@@ -9,7 +9,7 @@ user_registered = [True, False]
 
 
 def getRandomDetails():
-    person = dict()
+    person = dict() {}
 
     if not i % 2 == 0:
         person["name"] = fake.first_name_male() + " " + fake.last_name_male()
@@ -18,7 +18,7 @@ def getRandomDetails():
 
     person["Registered"] = random.choice(user_registered)
     person["dob"] = "".join(
-        map(str, [random.randint(1, 30), "/", random.randint(1, 12), "/", random.randint(1940, 2002)]))
+        map(str, [random.randint(1, 30), "/", random.randint(1, 12), "/", random.randint(1940, 2001)]))
     person["id"] = "".join(map(str, [person["name"].split()[0], random.randint(0, 50000)]))
     return person
 
