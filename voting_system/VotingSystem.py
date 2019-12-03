@@ -12,7 +12,7 @@ app = Flask(__name__)
 def login_user():
     return "AA"
 
-def read_candates: 
+def read_candidates():
     with open("studenvoter.txt") as f:
 
 @app.route('/')
