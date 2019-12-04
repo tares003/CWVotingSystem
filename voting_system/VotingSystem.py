@@ -1,4 +1,5 @@
 from flask import Flask
+import csv
 import datetime
 
 app = Flask(__name__)
@@ -12,8 +13,12 @@ app = Flask(__name__)
 def login_user():
     return "AA"
 
-def read_candidates():
-    with open("studenvoter.txt") as f:
+def read_candadates(): 
+    with open("voting_system/StudentVoters.txt") as f:
+        csv_reader = csv.DictReader(f, fieldnames=["name","Registered","dob","id","faculty"])
+        
+        for line in lines: 
+            
 
 @app.route('/')
 def hello_world():

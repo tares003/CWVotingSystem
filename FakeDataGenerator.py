@@ -1,5 +1,6 @@
 import csv
 import random
+import string
 
 from faker import Faker
 
@@ -22,11 +23,12 @@ def getRandomDetails():
         map(str, [random.randint(1, 30), "/", random.randint(1, 12), "/", random.randint(1940, 2001)]))
     person["id"] = "".join(map(str, [person["name"].split()[0], random.randint(0, 50000)]))
     person["faculty"] = random.choice(faculties)
+    person["password"] = "".join([random.choice(string.ascii_letters) for d in range(5)] + [random.choice(string.digits) for d in range(2)])  #for random password 
     return person
 
 
 with open("RandomStudents.csv", "w", newline='') as file:
-    writer = csv.DictWriter(file, fieldnames=["name", "Registered", "dob", "id", "faculty"], quoting=csv.QUOTE_ALL)
+    writer = csv.DictWriter(file, fieldnames=["name", "Registered", "dob", "id", "faculty", "password"], quoting=csv.QUOTE_ALL)
     header_written = False
     for i in range(1000):
         if not header_written:
@@ -59,7 +61,7 @@ with open("RandomStudents.csv", "r") as students_details_file:
                 else:
                     continue
 with open("RandomCandidates.csv", "w", newline="") as f:
-    writer = csv.DictWriter(f, fieldnames=["name", "Registered", "dob", "id", "position", 'faculty'],
+    writer = csv.DictWriter(f, fieldnames=["name", "Registered", "dob", "id", "position", 'faculty', "password"],
                             quoting=csv.QUOTE_ALL)
     header_written = False
     for i in random_choice_candadates:
