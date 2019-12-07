@@ -9,6 +9,10 @@ app = Flask(__name__)
 # pip freeze > requirements.txt #auto updates all the requirements and the packages
 
 
+def read_student_text_file():
+    with open('RandomStudents.csv', 'r') as student_file: 
+        line
+
 @app.route('/login', method=["POST"])
 def login_user():
     return "AA"

@@ -2,6 +2,9 @@
 from voting_system.VotingSystem import app
 
 # set
+def tkGui(): 
+    
+
 
 if __name__ == "__main__":
     app.config.from_object("config.DevelopmentConfig")
