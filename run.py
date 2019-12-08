@@ -1,4 +1,5 @@
 # This is for starting up the server
+from flask_login import LoginManager
 from voting_system.VotingSystem import app
 from voting_system.models import Student, Candidate
 import csv
@@ -48,13 +49,32 @@ def read_candadates():
         ALL_STUDENTS = map_the_objects(Candidate, csv_reader)
 
 
-# TODO: Make that a gui of starting server + Loading the text file of students + candadates
+# TODO: Make that a gui of starting server + Loading the text file of students + candidates
 def tk_gui():
     pass
 
 
+def get_student_by_id(id):
+    """
+
+    Returns Student with the specified id
+    :param id:
+    :return:
+    """
+
 if __name__ == "__main__":
     app.config.from_object("config.DevelopmentConfig")
+
+    # For managing logins
+    login_manager = LoginManager()
+    login_manager.init_app(app)
+
+    #https://flask-login.readthedocs.io/en/latest/#how-it-works
+    @login_manager.user_loader
+    def load_user(user_id):
+        return Student.get(user_id)
+
+
 
     # Can use cfg files by parsing as VOTINGSYS_SETTINGS=path/to/Config/file.cfg
     # overrides the the setting from the previous setting

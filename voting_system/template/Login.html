@@ -11,27 +11,54 @@
     <link rel="stylesheet"
         href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css">
     <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
 </head>
 
 <body>
     <h1>Login</h1>
-    <div class="ms-TextField">
-        <label class="ms-Label">Student ID</label>
-        <input class="ms-TextField-field" type="text" value="" placeholder="">
-    </div>
-    <div class="ms-TextField">
-        <label class="ms-Label">Password</label>
-        <input class="ms-TextField-field" type="password" value="" placeholder="">
-    </div>
-    <button id="login" class="ms-Button">
-        <span class="ms-Button-label">Login</span>
-    </button>
+    <form id="login_form">
+        <div class="ms-TextField">
+            <label class="ms-Label">Student ID</label>
+            <input class="ms-TextField-field" type="text" name="studentid" value="" placeholder="">
+        </div>
+        <div class="ms-TextField">
+            <label class="ms-Label">Password</label>
+            <input class="ms-TextField-field" type="password" name="password" value="" placeholder="">
+        </div>
+        <button id="login" class="ms-Button" type="submit">
+            <span class="ms-Button-label">Login</span>
+        </button>
+    </form>
+
+
 </body>
 <script type="text/javascript">
     var TextFieldElements = document.querySelectorAll(".ms-TextField");
     for (var i = 0; i < TextFieldElements.length; i++) {
         new fabric['TextField'](TextFieldElements[i]);
     }
+
+    //run this after doc is loaded
+    $(document).ready(function () {
+        $("#login").click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: 'login',
+                type: "POST",
+                data: $('#login_form').serialize(), // this will get form fields
+                success: function (res) {
+                    alert(res);
+                }
+            });
+
+        });
+
+
+
+    });
 </script>
 
 </html>
