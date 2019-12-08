@@ -9,6 +9,7 @@ single space or comma.
 class login_management:
     def __init__(self):
         self.authenticated =False;
+        self._login_id = None
 
     #https://flask-login.readthedocs.io/en/latest/#how-it-works Doc
     def is_active(self):
@@ -17,7 +18,7 @@ class login_management:
 
     def get_id(self):
         """Return the Student id- required by the module"""
-        return self.email
+        return self._login_id
 
     def is_authenticated(self):
         """Return True if the user is authenticated."""
@@ -50,6 +51,10 @@ class Student(login_management):
             print("The student %s %s has not registered" % (self.first_name, self.last_name))
             return False
 
+    def get_user_id(self): 
+        # return users login id 
+        return self._login_id
+
     @property
     def full_name(self):
         """
@@ -70,6 +75,17 @@ class Student(login_management):
 
     def set_has_registered(self, has_registered):
         self.__has_registered = has_registered
+
+    def verify_password(self, password):
+        """
+        To verify the users password
+        :param password:
+        :return:
+        """
+        if self.__pwd == password:
+            return True
+        else:
+            return False
 
 
 
