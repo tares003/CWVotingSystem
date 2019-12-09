@@ -51,6 +51,9 @@
                 data: $('#login_form').serialize(), // this will get form fields
                 success: function (res) {
                     alert(res);
+                },
+                error : function(error) {
+                    alert(error)
                 }
             });
 

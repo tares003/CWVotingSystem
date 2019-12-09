@@ -43,7 +43,7 @@ class Student(login_management):
         self.__has_registered = has_registered
 
     # check if user is registered
-    def get_has_registered(self):
+    def is_registered(self):
         if self.__has_registered:
             print("The student %s %s has registered" % (self.first_name, self.last_name))
             return True
@@ -60,7 +60,7 @@ class Student(login_management):
         """
         :return: Full name  of that person
         """
-        return self.first_name + self.middle_name + self.last_name
+        return " ".join([self.first_name, self.middle_name , self.last_name])
 
     @full_name.setter
     def full_name(self, name):
@@ -90,8 +90,10 @@ class Student(login_management):
 
 
 class Candidate(Student):
-    def __init__(self, name, login_id, pwd, has_registered=False, ):
-        super().__init__(name=name, login_id=login_id, pwd=pwd)
+    def __init__(self,  name, login_id, password, dob, faculty, position, has_registered=False, ):
+        super().__init__( name, login_id, password, dob, faculty, has_registered)
+        self.position = position
+
 
 
 class gsu_officers(Student):

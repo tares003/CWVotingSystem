@@ -1,6 +1,6 @@
 # This is for starting up the server
 from flask_login import LoginManager
-from voting_system.VotingSystem import app, read_student_text_file
+from voting_system.VotingSystem import app, read_student_text_file, read_candadates_text_file
 from voting_system.models import Student, Candidate
 import csv
 
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     app.config.from_object("config.DevelopmentConfig")
 
     read_student_text_file()
-
+    read_candadates_text_file()
 
 
     # Can use cfg files by parsing as VOTINGSYS_SETTINGS=path/to/Config/file.cfg
