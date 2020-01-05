@@ -15,7 +15,7 @@ def parse_datetime(dt_string):
     return datetime.strptime(dt_string, "%d/%m/%Y %H:%M:%S")
 
 class Config(object):
-    DEBUG = False
+    DEBUG = False 
     TESTING = False
     SECRET_KEY='\x88\xbf\xaa[\xa9\xc6\x8f\x8c x\x9bV\xe1C\x0e\n\xe9\x1c`\xc0\xa3\xd8\xcd\xc3' #to keep client sides ewcure 
     VOTING_START_DATE = parse_datetime(V_START_DATE)

@@ -8,11 +8,13 @@ fake = Faker()
 
 user_registered = [True, False]
 faculties = ["fa1", "fa2", "fa3", "fa4"]
+NUMBER_OF_DATA_TO_GENETRATE = 1000
 
 
 def getRandomDetails():
     person = dict()
 
+    #for generating mix of male and female
     if not i % 2 == 0:
         person["name"] = fake.first_name_male() + " " + fake.last_name_male()
     else:
@@ -26,7 +28,7 @@ def getRandomDetails():
     person["password"] = "".join([random.choice(string.ascii_letters) for d in range(5)] + [random.choice(string.digits) for d in range(2)])  #for random password 
     return person
 
-
+#generating the random Student
 with open("RandomStudents.csv", "w", newline='') as file:
     writer = csv.DictWriter(file, fieldnames=["name", "Registered", "dob", "id", "faculty", "password"], quoting=csv.QUOTE_ALL)
     header_written = False
@@ -42,7 +44,7 @@ postions = {"GSU Officers": 3,
             "President": 1,
             "Faculty Officer": 16
             }
-
+#reading again from the text file
 with open("RandomStudents.csv", "r") as students_details_file:
     csv_reader = csv.DictReader(students_details_file)
     all_Students = []
@@ -54,14 +56,26 @@ with open("RandomStudents.csv", "r") as students_details_file:
             unique = False
             while not unique:
                 choice = random.choice(all_Students)
+                # max 16 candidates per faculty
+                print(key, val, i)
+                print(choice['faculty'])
+                print(all_Students[0]['faculty'])
+
+                # only 16 candidates for the each Faculty
+                if key == "Faculty Officer" and len(list(filter(lambda x: x['faculty'] == choice['faculty'] and x['position'] == "Faculty Officer", random_choice_candadates))) >= 16:
+                    continue
+
                 if choice not in random_choice_candadates:
                     choice["position"] = key
-                    random_choice_candadates.append(choice)
+                    choice['campaign'] = fake.text()[:random.randint(5,20)]
+                    choice['promises'] = fake.text() 
+                    choice['logoref'] = None # TODO: GENERATE RANDOM PROFILE IMAGES
                     unique = True
+                    random_choice_candadates.append(choice)
                 else:
                     continue
 with open("RandomCandidates.csv", "w", newline="") as f:
-    writer = csv.DictWriter(f, fieldnames=["name", "Registered", "dob", "id", "position", 'faculty', "password"],
+    writer = csv.DictWriter(f, fieldnames=["name", "Registered", "dob", "id", "position", 'faculty', "password", 'campaign', 'promises', 'logoref'],
                             quoting=csv.QUOTE_ALL)
     header_written = False
     for i in random_choice_candadates:

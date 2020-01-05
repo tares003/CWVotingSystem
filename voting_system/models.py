@@ -30,7 +30,7 @@ class login_management:
 
 
 class Student(login_management):
-    def __init__(self, name, login_id, password, dob, faculty, has_registered=False):
+    def __init__(self, name, login_id, password, dob, faculty, directory_to_user_image=None, has_registered=False):
         self.first_name = name.split()[0]
         self.middle_name = " ".join(name.split()[1:len(name.split()) - 1])  # gets all the middle names
         self.last_name = name.split()[-1]
@@ -40,6 +40,7 @@ class Student(login_management):
                               0] + self.last_name  # This property could be used to send out email after vote been casted
         self.__pwd = password
         self.dob = dob
+        self.image = directory_to_user_image # directory ref to user img
         self.__has_registered = has_registered
 
     # check if user is registered
@@ -86,13 +87,20 @@ class Student(login_management):
             return True
         else:
             return False
-
+    def get_user_faculty(self):
+        """
+        :return:Returns users faculty
+        """
+        return self._faculty
 
 
 class Candidate(Student):
-    def __init__(self,  name, login_id, password, dob, faculty, position, has_registered=False, ):
-        super().__init__( name, login_id, password, dob, faculty, has_registered)
+    def __init__(self,  name, login_id, password, dob, faculty, position, logoref=None, campaign=None, promises=None, has_registered=False):
+        super().__init__( name, login_id, password, dob, faculty, has_registered )
         self.position = position
+        self.campaign_name = campaign # candidates campaigning name
+        self.campaign_promises = promises
+        self.logo = logoref
 
 
 
