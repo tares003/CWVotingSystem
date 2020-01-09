@@ -8,10 +8,10 @@ single space or comma.
 
 class login_management:
     def __init__(self):
-        self.authenticated =False;
+        self.authenticated = False;
         self._login_id = None
 
-    #https://flask-login.readthedocs.io/en/latest/#how-it-works Doc
+    # https://flask-login.readthedocs.io/en/latest/#how-it-works Doc
     def is_active(self):
         """Returns True as all the users in text file is active"""
         return True
@@ -40,7 +40,7 @@ class Student(login_management):
                               0] + self.last_name  # This property could be used to send out email after vote been casted
         self.__pwd = password
         self.dob = dob
-        self.image = directory_to_user_image # directory ref to user img
+        self.image = directory_to_user_image  # directory ref to user img
         self.__has_registered = has_registered
 
     # check if user is registered
@@ -52,7 +52,7 @@ class Student(login_management):
             print("The student %s %s has not registered" % (self.first_name, self.last_name))
             return False
 
-    def get_user_id(self): 
+    def get_user_id(self):
         # return users login id 
         return self._login_id
 
@@ -61,7 +61,7 @@ class Student(login_management):
         """
         :return: Full name  of that person
         """
-        return " ".join([self.first_name, self.middle_name , self.last_name])
+        return " ".join([self.first_name, self.middle_name, self.last_name])
 
     @full_name.setter
     def full_name(self, name):
@@ -87,22 +87,49 @@ class Student(login_management):
             return True
         else:
             return False
+
     def get_user_faculty(self):
         """
         :return:Returns users faculty
         """
         return self._faculty
 
+    def __eq__(self, other):
+        """
+        Check weather the other object with similar attributes
+        """
+        if not isinstance(other, Student):
+            return NotImplemented
+        return (self.full_name.lower(), self._login_id, self.dob) == (other.full_name.lower(), other._login_id, other.dob)
+
+    def __hash__(self):
+        """
+        Returns hash for this object
+        """
+        return hash((self.full_name, self._login_id, self.dob))
+
+
+    def get_user_ppi_info(self):
+        """
+        Returns user's Full name, dob and loginid
+        """
+        return (self.first_name, self.dob, self._login_id, self._faculty)
+
 
 class Candidate(Student):
-    def __init__(self,  name, login_id, password, dob, faculty, position, logoref=None, campaign=None, promises=None, has_registered=False):
-        super().__init__( name, login_id, password, dob, faculty, has_registered )
+    def __init__(self, name, login_id, password, dob, faculty, position, logoref=None, campaign=None, promises=None,
+                 has_registered=False):
+        super().__init__(name, login_id, password, dob, faculty, has_registered)
         self.position = position
-        self.campaign_name = campaign # candidates campaigning name
+        self.campaign_name = campaign  # candidates campaigning name
         self.campaign_promises = promises
         self.logo = logoref
 
-
+    def get_user_ppi_info(self):
+        """
+        Returns user's Full name, dob and loginid
+        """
+        return (self.first_name, self.dob, self._login_id, self._faculty, self.position)
 
 class gsu_officers(Student):
     def __init__(self, petitionRunng):

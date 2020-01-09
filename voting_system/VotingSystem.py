@@ -1,4 +1,5 @@
 import csv
+import sys
 from datetime import datetime, timedelta
 from functools import wraps
 
@@ -6,6 +7,7 @@ from flask import Flask, flash
 from flask import request, render_template, redirect, url_for
 from flask_login import login_user, LoginManager, login_required, logout_user, current_user
 from flask_restplus import reqparse
+from prettytable import PrettyTable
 
 from .models import Student, Candidate
 
@@ -78,18 +80,115 @@ def map_the_objects(class_to_map_to, iterable):
     return [class_to_map_to(**dict(details_row)) for details_row in iterable]
 
 
-# TODO: Umar
-def remove_duplicates(candidates=False):
-    ALl_Unique_Cadidates = []
-    if candidates:
-        global ALL_CANDIDATES
-        for candidate in ALL_CANDIDATES:
-            pass
+def get_users_with_matching_hash(searching_hash, list_of_objects):
+    """
+        returns all the user with matching hash
+        :param searching_hash: hash to search for
+        :param list_of_objects: objects with hash implemented
+    """
+    return list(filter(lambda x: hash(x) == searching_hash, list_of_objects))
 
-        # this is if they are candidate
+
+def list_all_duplicates(iterable):
+    """
+    Returns the duplicates of an objects of an iterable
+    """
+    already_seen = set()
+    seen_twice = set(x for x in iterable if x in already_seen or already_seen.add(
+        x))  # adds already seen or keeps it if appeared more than  2 times
+
+    return list(seen_twice)
+
+
+def dups_removal_selction(list_of__dups_usr_Objects, table_column, original_List):
+    """
+    creates
+    """
+    table = PrettyTable(table_column)
+    for idx, list_of_usr_Object in enumerate(list_of__dups_usr_Objects):
+        row = list(list_of_usr_Object.get_user_ppi_info())
+        row.insert(0, str(idx))
+        table.add_row(row)
+
+    valid = False
+    selections = None
+    print('Number of USers in original list %s ' % len(original_List))
+    while not valid:
+        try:
+            print("Please enter the the userid which you want to keep")
+            selections = int(input(table))
+            if 0 <= selections <= len(list_of__dups_usr_Objects) - 1:
+                print("Selected ID %s \n removed user %s " % (
+                selections, str(list_of__dups_usr_Objects[selections].get_user_ppi_info())))
+                valid = True
+                for i in range(len(list_of__dups_usr_Objects)):  # removing all others except selected one
+                    if i == selections:
+                        continue
+                    original_List.remove(list_of__dups_usr_Objects[selections])  # removes from the original list
+
+                print('Number of users in original list after Removal %s ' % len(original_List))
+
+            else:
+                print('%s is NOT VALID userid, please enter a valid id' % selections)
+        except ValueError:
+            print('Only number allowed')
+        except Exception:
+            print('ERROR Removing Duplicates')
+            import traceback
+            traceback.print_exc()
+            sys.exit()
+
+    # Can be used if you want to be removed by user id
+    # while not valid:
+    #     print("Please enter the the userid which you want to keep")
+    #     selections = str(input(table))
+    #     for list_of_usr_Object in list_of__dups_usr_Objects:  # checking if id is valid
+    #         if list_of_usr_Object.get_id().lower() == selections.lower():
+    #             print("Selected userID %s" % selections)
+    #             valid = True
+    #     else:
+    #         print('NOT VALID userid')
+
+    # This is Exta allows user to select user which they want to remove
+    # while not valid:
+    #     selctions = str(input("Please enter the the userid which you what to be removed, if more than "
+    #                           "than 2 use comma to separate them eg")).split(',')
+    #     for selction in selctions:
+    #         # checking if given userid in valid and are from these dups and return would be one user which to keeep
+    #         if len([selection.lower() for selection in selctions
+    #                 if selection in [usr.get_id().lower() for usr in list_of__dups_usr_Objects]
+    #                 ]) == len(selction)-1: #checking with all the object that matches the
+    #             valid = True
+
+
+# TODO: Umar
+def remove_duplicates(list_of_user_object):
+    """
+    Removes the duplicate user
+    """
+    if not list_of_user_object:
+        print('Empty list')
+        return None
+    all_candidates_hash = [hash(candidates) for candidates in list_of_user_object]  # all the hash set
+    all_duplicates_hashes = list_all_duplicates(all_candidates_hash)
+    # for user in list_of_user_object:
+    #     c_hash = hash(user)
+    #     if c_hash in all_candidates_hash and all_candidates_hash.count(c_hash) > 1:
+    if all_duplicates_hashes:
+        for dup_hash in all_duplicates_hashes:
+            print('found duplicate')
+            table_cols = ['id', 'first name', 'dob', 'login id', 'faculty']
+            dups_users_with_this_hash = get_users_with_matching_hash(dup_hash, list_of_user_object)
+            # using 1st object is check object type
+            if isinstance(dups_users_with_this_hash[0], Candidate):
+                dups_removal_selction(dups_users_with_this_hash, table_cols.append('position'),
+                                      list_of_user_object)  # extra col for cadidates
+            elif isinstance(dups_users_with_this_hash[0], Student):
+                dups_removal_selction(dups_users_with_this_hash, table_cols, list_of_user_object)
+            else:
+                dups_removal_selction(dups_users_with_this_hash, [], list_of_user_object)
     else:
-        pass
-        # not candidate
+        print('NO Duplicates found')
 
 
 def read_student_text_file():
@@ -167,12 +266,12 @@ def selection(position):
     if position:
         candidates = get_cadidates_by_position(position)
         if candidates:
-            #print(current_user.__dict__)
+            # print(current_user.__dict__)
             print(current_user.get_user_faculty())
             if position == 'faculty officer':
                 faculty_candidates = list(filter(lambda x: x.get_user_faculty() == current_user.get_user_faculty(),
-                                            candidates))
-                #print(faculty_candidates[0].__dict__)
+                                                 candidates))
+                # print(faculty_candidates[0].__dict__)
                 return render_template("selection.html", candidates=faculty_candidates)
             else:
                 return render_template("selection.html", candidates=candidates)
