@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="95085b7a-4258-4514-8c31-29d20cd91529" name="Default Changelist" comment="Added login  + View of Candidates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeDataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/FakeDataGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voting_system/VotingSystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/VotingSystem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voting_system/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voting_system/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/templates/Login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voting_system/templates/selection.html" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/templates/selection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomCandidates.csv" beforeDir="false" afterPath="$PROJECT_DIR$/RandomCandidates.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,11 +22,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="830" />
   </component>
   <component name="ProjectId" id="1VwwCsmDIkGNDlWPzHuz67SoHxE" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -153,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575893849725</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added removing duplicates feature">
+      <created>1578588746411</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578588746411</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -182,37 +179,46 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="addded pwd field" />
     <MESSAGE value="Added login  + View of Candidates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added login  + View of Candidates" />
+    <MESSAGE value="Added removing duplicates feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added removing duplicates feature" />
   </component>
   <component name="WindowStateProjectService">
     <state x="468" y="313" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1578240319047">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="468" y="313" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1578240319047" />
+    <state x="206" y="52" key="CommitChangelistDialog2" timestamp="1578588746104">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="206" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578588746104" />
     <state width="1440" height="438" key="DebuggerActiveHint" timestamp="1578248016569">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1440" height="438" key="DebuggerActiveHint/0.0.1440.900@0.0.1440.900" timestamp="1578248016569" />
-    <state width="709" height="303" key="GridCell.Tab.0.bottom" timestamp="1578248090361">
+    <state width="1141" height="311" key="GridCell.Tab.0.bottom" timestamp="1578264011685">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="709" height="303" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578248090361" />
-    <state width="709" height="303" key="GridCell.Tab.0.center" timestamp="1578248090359">
+    <state width="1141" height="311" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578264011685" />
+    <state width="1141" height="311" key="GridCell.Tab.0.center" timestamp="1578264011683">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="709" height="303" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1578248090359" />
-    <state width="709" height="303" key="GridCell.Tab.0.left" timestamp="1578248090358">
+    <state width="1141" height="311" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1578264011683" />
+    <state width="1141" height="311" key="GridCell.Tab.0.left" timestamp="1578264011681">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="709" height="303" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1578248090358" />
-    <state width="709" height="303" key="GridCell.Tab.0.right" timestamp="1578248090360">
+    <state width="1141" height="311" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1578264011681" />
+    <state width="1141" height="311" key="GridCell.Tab.0.right" timestamp="1578264011684">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="709" height="303" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1578248090360" />
-    <state width="720" height="441" key="XDebugger.FullValuePopup" timestamp="1578248016561">
+    <state width="1141" height="311" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1578264011684" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1578589759128">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="720" height="441" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1578248016561" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1578589759128" />
+    <state width="720" height="441" key="XDebugger.FullValuePopup" timestamp="1578588575858">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="720" height="441" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1578588575858" />
     <state width="720" height="411" key="XDebugger.FullValuePopup/0.23.1440.839@0.23.1440.839" timestamp="1578241099425" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1578243685034">
       <screen x="0" y="23" width="1440" height="839" />
@@ -222,5 +228,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="285" y="193" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900@0.0.1440.900" timestamp="1578245525832" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1578586337351">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1578586337351" />
   </component>
 </project>
