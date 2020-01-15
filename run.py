@@ -19,8 +19,8 @@ def tk_gui():
 if __name__ == "__main__":
     app.config.from_object("config.DevelopmentConfig")
 
-    read_student_text_file()
-    read_candadates_text_file()
+    read_student_text_file('voting_system/RandomStudents.csv',remove_dups=True)
+    read_candadates_text_file('voting_system/RandomCandidates.csv',remove_dups=True)
 
 
     # Can use cfg files by parsing as VOTINGSYS_SETTINGS=path/to/Config/file.cfg

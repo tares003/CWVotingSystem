@@ -25,6 +25,7 @@ ALL_CANDIDATES = []  # storing all the candidates from the text file
 
 @login_manager.user_loader
 def load_user(user_id):
+    #method  for the login manager
     return get_student_by_id(user_id)
 
 
@@ -77,6 +78,7 @@ def map_the_objects(class_to_map_to, iterable):
     :param iterable: iterable- needs to be dict
     :return: list containing all the objects
     """
+    next(iterable) #removes the first line
     return [class_to_map_to(**dict(details_row)) for details_row in iterable]
 
 
@@ -191,8 +193,8 @@ def remove_duplicates(list_of_user_object):
         print('NO Duplicates found')
 
 
-def read_student_text_file():
-    with open('voting_system/RandomStudents.csv', 'r') as student_file:
+def read_student_text_file(text_file_name, remove_dups = False):
+    with open(text_file_name, 'r') as student_file:
         required_fields_in_csv_file = ["name", "has_registered", "dob", "login_id", "faculty",
                                        "password", 'directory_to_user_image']
         # TODO: Remove  Duplicate students
@@ -201,10 +203,12 @@ def read_student_text_file():
 
         global ALL_STUDENTS
         ALL_STUDENTS = map_the_objects(Student, csv_reader)
+        if remove_dups:
+            remove_duplicates(ALL_STUDENTS)
 
 
-def read_candadates_text_file():
-    with open("voting_system/RandomCandidates.csv") as candidate_file:
+def read_candadates_text_file(text_file_name,remove_dups = False):
+    with open(text_file_name) as candidate_file:
         required_fields_in_csv_file = ["name", "has_registered", "dob", "login_id",
                                        "position", "faculty", "password",
                                        'campaign', 'promises', 'logoref']  # logoref - contain ref directory of img
@@ -214,6 +218,8 @@ def read_candadates_text_file():
         global ALL_CANDIDATES
 
         ALL_CANDIDATES = map_the_objects(Candidate, csv_reader)
+        if remove_dups:
+            remove_duplicates(ALL_CANDIDATES)
 
 
 logindetailsPasrsing = reqparse.RequestParser()
@@ -232,6 +238,7 @@ def login():
             if matched_student.verify_password(
                     args["password"]) & matched_student.is_registered():  # checking password is valid
                 login_user(matched_student, timedelta(minutes=10))  # 10 minutes after the cookie will expire
+                print('Success')
                 flash('You were successfully logged in')
                 return redirect(url_for('selection', position="president"))
             else:
@@ -265,10 +272,12 @@ def selection(position):
     position = position.lower()
     if position:
         candidates = get_cadidates_by_position(position)
+        print(len(candidates))
         if candidates:
             # print(current_user.__dict__)
             print(current_user.get_user_faculty())
             if position == 'faculty officer':
+                #Filter out so only returns student's  faculty.
                 faculty_candidates = list(filter(lambda x: x.get_user_faculty() == current_user.get_user_faculty(),
                                                  candidates))
                 # print(faculty_candidates[0].__dict__)
@@ -280,6 +289,14 @@ def selection(position):
             return "No Candidates for this %s position " % position
     else:
         return "position not provided"
+
+
+@app.route('/selection/<position>')
+@login_required
+def users_vote():
+    pass
+
+
 
 
 def view_all_results():

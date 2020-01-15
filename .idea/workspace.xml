@@ -4,6 +4,10 @@
     <list default="true" id="95085b7a-4258-4514-8c31-29d20cd91529" name="Default Changelist" comment="Added login  + View of Candidates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RandomCandidates.csv" beforeDir="false" afterPath="$PROJECT_DIR$/RandomCandidates.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomStudents.csv" beforeDir="false" afterPath="$PROJECT_DIR$/RandomStudents.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/VotingSystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/VotingSystem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/templates/Login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +56,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.FakeDataGenerator">
+  <component name="RunManager" selected="Python.run">
     <configuration name="FakeDataGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CWVotingSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -101,8 +105,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.FakeDataGenerator" />
         <item itemvalue="Python.run" />
+        <item itemvalue="Python.FakeDataGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -150,7 +154,21 @@
       <option name="project" value="LOCAL" />
       <updated>1578588746411</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added login  + View of Candidates">
+      <created>1578611832699</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1578611832699</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added login  + View of Candidates">
+      <created>1578611854939</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578611854939</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -178,59 +196,83 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="addded pwd field" />
-    <MESSAGE value="Added login  + View of Candidates" />
     <MESSAGE value="Added removing duplicates feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added removing duplicates feature" />
+    <MESSAGE value="Added login  + View of Candidates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added login  + View of Candidates" />
   </component>
   <component name="WindowStateProjectService">
     <state x="468" y="313" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1578240319047">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="468" y="313" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1578240319047" />
-    <state x="206" y="52" key="CommitChangelistDialog2" timestamp="1578588746104">
+    <state x="206" y="52" key="CommitChangelistDialog2" timestamp="1578611854754">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="206" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578588746104" />
-    <state width="1440" height="438" key="DebuggerActiveHint" timestamp="1578248016569">
+    <state x="206" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578611854754" />
+    <state width="1440" height="438" key="DebuggerActiveHint" timestamp="1578615964151">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1440" height="438" key="DebuggerActiveHint/0.0.1440.900@0.0.1440.900" timestamp="1578248016569" />
-    <state width="1141" height="311" key="GridCell.Tab.0.bottom" timestamp="1578264011685">
+    <state width="1440" height="438" key="DebuggerActiveHint/0.0.1440.900@0.0.1440.900" timestamp="1578615964151" />
+    <state width="1419" height="390" key="GridCell.Tab.0.bottom" timestamp="1579080316987">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1141" height="311" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578264011685" />
-    <state width="1141" height="311" key="GridCell.Tab.0.center" timestamp="1578264011683">
+    <state width="1419" height="390" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579080316987" />
+    <state width="1419" height="390" key="GridCell.Tab.0.center" timestamp="1579080316986">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1141" height="311" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1578264011683" />
-    <state width="1141" height="311" key="GridCell.Tab.0.left" timestamp="1578264011681">
+    <state width="1419" height="390" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579080316986" />
+    <state width="1419" height="390" key="GridCell.Tab.0.left" timestamp="1579080316985">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1141" height="311" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1578264011681" />
-    <state width="1141" height="311" key="GridCell.Tab.0.right" timestamp="1578264011684">
+    <state width="1419" height="390" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579080316985" />
+    <state width="1419" height="390" key="GridCell.Tab.0.right" timestamp="1579080316987">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1141" height="311" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1578264011684" />
+    <state width="1419" height="390" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579080316987" />
     <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1578589759128">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1578589759128" />
-    <state width="720" height="441" key="XDebugger.FullValuePopup" timestamp="1578588575858">
+    <state width="720" height="441" key="XDebugger.FullValuePopup" timestamp="1578612278855">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="720" height="441" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1578588575858" />
+    <state width="720" height="441" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1578612278855" />
     <state width="720" height="411" key="XDebugger.FullValuePopup/0.23.1440.839@0.23.1440.839" timestamp="1578241099425" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1578243685034">
       <screen x="0" y="23" width="1440" height="839" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.839@0.23.1440.839" timestamp="1578243685034" />
-    <state x="285" y="193" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1578245525832">
+    <state x="285" y="193" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1578616325548">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="285" y="193" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900@0.0.1440.900" timestamp="1578245525832" />
+    <state x="285" y="193" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900@0.0.1440.900" timestamp="1578616325548" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1578586337351">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1578586337351" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/run.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <condition expression="details_row['name']=='Katherine Smith'" language="Python" />
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="details_row" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
