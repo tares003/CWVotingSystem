@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95085b7a-4258-4514-8c31-29d20cd91529" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flask_server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/voting_system/templates/components/list_candidates.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voting_system/VotingSystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/VotingSystem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voting_system/templates/selection.html" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/templates/selection.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +49,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PJFiles" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -200,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579098893400</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="all Updates">
+      <created>1579537766788</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1579537766788</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -242,10 +244,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="468" y="313" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1578240319047" />
-    <state x="206" y="52" key="CommitChangelistDialog2" timestamp="1579098893002">
+    <state x="206" y="52" key="CommitChangelistDialog2" timestamp="1579537766481">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="206" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579098893002" />
+    <state x="206" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579537766481" />
     <state width="1440" height="438" key="DebuggerActiveHint" timestamp="1578615964151">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -290,10 +292,10 @@
       <screen x="0" y="23" width="1440" height="838" />
     </state>
     <state x="229" y="81" key="SettingsEditor/0.23.1440.838@0.23.1440.838" timestamp="1579361297032" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1579098908094">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1579537780499">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579098908094" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579537780499" />
     <state width="720" height="441" key="XDebugger.FullValuePopup" timestamp="1578612278855">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
