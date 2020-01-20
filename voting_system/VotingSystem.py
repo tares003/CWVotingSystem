@@ -268,33 +268,38 @@ def hello_world():
 @app.route('/selection/<position>')
 @login_required
 def selection(position):
-    # TODO Check if they already Voted 
-    position = position.lower()
-    if position:
-        candidates = get_cadidates_by_position(position)
-        print(len(candidates))
-        if candidates:
-            # print(current_user.__dict__)
-            print(current_user.get_user_faculty())
-            if position == 'faculty officer':
-                #Filter out so only returns student's  faculty.
-                faculty_candidates = list(filter(lambda x: x.get_user_faculty() == current_user.get_user_faculty(),
-                                                 candidates))
-                # print(faculty_candidates[0].__dict__)
-                return render_template("selection.html", candidates=faculty_candidates)
-            else:
+    # TODO Check if they already Voted
+
+    if request.method == 'GET':
+        position = position.lower()
+        if position:
+            candidates = get_cadidates_by_position(position)
+            if candidates:
+                # print(current_user.__dict__)
+                print(current_user.get_user_faculty())
+                if position == 'faculty officer':
+                    #Filter out so only returns student's  faculty.
+                    candidates = list(filter(lambda x: x.get_user_faculty() == current_user.get_user_faculty(),
+                                                     candidates))
+
+                    # print(faculty_candidates[0].__dict__)
+
+                candidates = {position: candidates}
+
                 return render_template("selection.html", candidates=candidates)
 
+            else:
+                return "No Candidates for this %s position " % position
         else:
-            return "No Candidates for this %s position " % position
-    else:
-        return "position not provided"
+            return "position not provided"
 
+    elif request.method == 'POST':
+        pass
 
-@app.route('/selection/<position>')
-@login_required
-def users_vote():
-    pass
+# @app.route('/selection/<position>')
+# @login_required
+# def users_vote():
+#     pass
 
 
 

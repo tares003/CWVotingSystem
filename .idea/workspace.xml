@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95085b7a-4258-4514-8c31-29d20cd91529" name="Default Changelist" comment="Added login  + View of Candidates">
+    <list default="true" id="95085b7a-4258-4514-8c31-29d20cd91529" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/flask_server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/voting_system/templates/components/list_candidates.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RandomCandidates.csv" beforeDir="false" afterPath="$PROJECT_DIR$/RandomCandidates.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RandomStudents.csv" beforeDir="false" afterPath="$PROJECT_DIR$/RandomStudents.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/voting_system/VotingSystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/VotingSystem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voting_system/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/templates/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/templates/selection.html" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/templates/selection.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -52,11 +53,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.run">
+  <component name="RunManager" selected="Python.flask_server">
     <configuration name="FakeDataGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CWVotingSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,6 +72,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FakeDataGenerator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="flask_server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="CWVotingSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flask_server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -102,9 +125,11 @@
     <list>
       <item itemvalue="Python.FakeDataGenerator" />
       <item itemvalue="Python.run" />
+      <item itemvalue="Python.flask_server" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.flask_server" />
         <item itemvalue="Python.run" />
         <item itemvalue="Python.FakeDataGenerator" />
       </list>
@@ -168,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578611854939</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="all Updates">
+      <created>1579098893400</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1579098893400</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -198,54 +230,96 @@
     <MESSAGE value="addded pwd field" />
     <MESSAGE value="Added removing duplicates feature" />
     <MESSAGE value="Added login  + View of Candidates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added login  + View of Candidates" />
+    <MESSAGE value="all Updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="all Updates" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="791" y="213" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1579521964743">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="791" y="213" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1579521964743" />
     <state x="468" y="313" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1578240319047">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="468" y="313" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1578240319047" />
-    <state x="206" y="52" key="CommitChangelistDialog2" timestamp="1578611854754">
+    <state x="206" y="52" key="CommitChangelistDialog2" timestamp="1579098893002">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="206" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578611854754" />
+    <state x="206" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579098893002" />
     <state width="1440" height="438" key="DebuggerActiveHint" timestamp="1578615964151">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1440" height="438" key="DebuggerActiveHint/0.0.1440.900@0.0.1440.900" timestamp="1578615964151" />
-    <state width="1419" height="390" key="GridCell.Tab.0.bottom" timestamp="1579080316987">
+    <state x="144" y="79" key="DiffContextDialog" timestamp="1579101062645">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="390" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579080316987" />
-    <state width="1419" height="390" key="GridCell.Tab.0.center" timestamp="1579080316986">
+    <state x="144" y="79" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1579101062645" />
+    <state width="830" height="335" key="GridCell.Tab.0.bottom" timestamp="1579537758019">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="390" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579080316986" />
-    <state width="1419" height="390" key="GridCell.Tab.0.left" timestamp="1579080316985">
+    <state width="830" height="335" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579537758019" />
+    <state width="914" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1579527648247" />
+    <state width="1419" height="173" key="GridCell.Tab.0.bottom/0.23.1440.838@0.23.1440.838" timestamp="1579471379827" />
+    <state width="1419" height="341" key="GridCell.Tab.0.bottom/0.23.1440.839@0.23.1440.839" timestamp="1579474995807" />
+    <state width="830" height="335" key="GridCell.Tab.0.center" timestamp="1579537758019">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="390" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579080316985" />
-    <state width="1419" height="390" key="GridCell.Tab.0.right" timestamp="1579080316987">
+    <state width="830" height="335" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579537758019" />
+    <state width="914" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1579527648224" />
+    <state width="1419" height="173" key="GridCell.Tab.0.center/0.23.1440.838@0.23.1440.838" timestamp="1579471379826" />
+    <state width="1419" height="341" key="GridCell.Tab.0.center/0.23.1440.839@0.23.1440.839" timestamp="1579474995806" />
+    <state width="830" height="335" key="GridCell.Tab.0.left" timestamp="1579537758018">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="390" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579080316987" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1578589759128">
+    <state width="830" height="335" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579537758018" />
+    <state width="914" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1579527648203" />
+    <state width="1419" height="173" key="GridCell.Tab.0.left/0.23.1440.838@0.23.1440.838" timestamp="1579471379826" />
+    <state width="1419" height="341" key="GridCell.Tab.0.left/0.23.1440.839@0.23.1440.839" timestamp="1579474995805" />
+    <state width="830" height="335" key="GridCell.Tab.0.right" timestamp="1579537758019">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1578589759128" />
+    <state width="830" height="335" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579537758019" />
+    <state width="914" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1579527648244" />
+    <state width="1419" height="173" key="GridCell.Tab.0.right/0.23.1440.838@0.23.1440.838" timestamp="1579471379827" />
+    <state width="1419" height="341" key="GridCell.Tab.0.right/0.23.1440.839@0.23.1440.839" timestamp="1579474995806" />
+    <state x="328" y="168" key="RollbackChangesDialog" timestamp="1579101067212">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="328" y="168" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579101067212" />
+    <state x="229" y="81" key="SettingsEditor" timestamp="1579361297032">
+      <screen x="0" y="23" width="1440" height="838" />
+    </state>
+    <state x="229" y="81" key="SettingsEditor/0.23.1440.838@0.23.1440.838" timestamp="1579361297032" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1579098908094">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579098908094" />
     <state width="720" height="441" key="XDebugger.FullValuePopup" timestamp="1578612278855">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="720" height="441" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1578612278855" />
     <state width="720" height="411" key="XDebugger.FullValuePopup/0.23.1440.839@0.23.1440.839" timestamp="1578241099425" />
-    <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1578243685034">
-      <screen x="0" y="23" width="1440" height="839" />
+    <state x="100" y="83" width="1240" height="751" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1579475904306">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="100" y="83" width="1240" height="751" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1579475904306" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.839@0.23.1440.839" timestamp="1578243685034" />
+    <state x="399" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1579515049853">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="399" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1579515049853" />
     <state x="285" y="193" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1578616325548">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="285" y="193" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1440.900@0.0.1440.900" timestamp="1578616325548" />
+    <state x="386" y="212" width="667" height="476" key="find.popup" timestamp="1579103379578">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="386" y="212" width="667" height="476" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1579103379578" />
+    <state x="302" y="248" key="git4idea.merge.GitPullDialog" timestamp="1579101100632">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="302" y="248" key="git4idea.merge.GitPullDialog/0.0.1440.900@0.0.1440.900" timestamp="1579101100632" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1578586337351">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -253,13 +327,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/run.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <condition expression="details_row['name']=='Katherine Smith'" language="Python" />
