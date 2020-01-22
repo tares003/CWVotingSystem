@@ -3,18 +3,25 @@ import sys
 from datetime import datetime, timedelta
 from functools import wraps
 
-from flask import Flask, flash
+from flask import Flask, flash, session
 from flask import request, render_template, redirect, url_for
 from flask_login import login_user, LoginManager, login_required, logout_user, current_user
 from flask_restplus import reqparse
 from prettytable import PrettyTable
+#for local databases
+from flaskext.zodb import ZODB
+import transaction
 
+#model of persons
 from .models import Student, Candidate
 
 app = Flask(__name__, template_folder="templates")
 # For managing logins
 login_manager = LoginManager()
 login_manager.init_app(app)
+
+#Local Database
+db = ZODB(app)
 
 ALL_STUDENTS = []  # storing all the student from the text file
 ALL_CANDIDATES = []  # storing all the candidates from the text file
@@ -294,7 +301,14 @@ def selection(position):
             return "position not provided"
 
     elif request.method == 'POST':
-        pass
+        logindetailsPasrsing = reqparse.RequestParser()
+        logindetailsPasrsing.add_argument('position', type=str, required=True, help='position data missing')
+        logindetailsPasrsing.add_argument('selection', type=str, required=True, help='no selection')
+
+        request
+
+
+
 
 # @app.route('/selection/<position>')
 # @login_required

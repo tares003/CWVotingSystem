@@ -1,0 +1,50 @@
+{
+    "studentID":
+    {
+        "faculty": {
+            "candidatename1": 1,
+            "candidatename2": 3,
+            "candidatename3": 2,
+            "candidatename4": 4
+
+        },
+        "gsu_officers": {
+            "gsu1": {
+                "candidatename1": 1,
+                "candidatename2": 3,
+                "candidatename3": 2,
+                "candidatename4": 4
+
+            },
+            "gsu2": {
+                "candidatename1": 1,
+                "candidatename2": 3,
+                "candidatename3": 2,
+                "candidatename4": 4
+            },
+            "gsu3": {
+                "candidatename1": 1,
+                "candidatename2": 3,
+                "candidatename3": 2,
+                "candidatename4": 4
+
+            },
+            "gsu4": {
+                "candidatename1": 1,
+                "candidatename2": 3,
+                "candidatename3": 2,
+                "candidatename4": 4
+
+            }
+        },
+        "president": {
+            "candidatename1": 1,
+            "candidatename2": 3,
+            "candidatename3": 2,
+            "candidatename4": 4
+
+        }
+
+    }
+
+}
