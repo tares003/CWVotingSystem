@@ -25,7 +25,7 @@ def getRandomDetails():
         map(str, [random.randint(1, 30), "/", random.randint(1, 12), "/", random.randint(1940, 2001)]))
     person["id"] = "".join(map(str, [person["name"].split()[0], random.randint(0, 50000)]))
     person["faculty"] = random.choice(faculties)
-    person["password"] = "".join([random.choice(string.ascii_letters) for d in range(5)] + [random.choice(string.digits) for d in range(2)])  #for random password 
+    person["password"] = "".join([random.choice(string.ascii_letters) for d in range(5)] + [random.choice(string.digits) for d in range(2)])  #for random password
     return person
 
 #generating the random Student
@@ -59,6 +59,17 @@ with open("RandomStudents.csv", "r") as students_details_file:
 
 
     first_run = True
+    faculty_groups = {}
+
+    # counter = 1
+    # for i in range(1, (postions['Faculty Officer'] * 4) + 1):
+    #     if i % 4 != 0:
+    #
+    #         pass
+    #     elif i% 4 == 0:
+    #         faculty_groups['group %s' % counter] = 0
+
+    done_faculty = {'fa1': 0, 'fa2': 0, 'fa3': 0, 'fa4': 0 }
     for key, val in postions.items():  # Each position
         for i in range(1, val * 4+1):  # 4 candadates per position
             #for unique candidates
@@ -77,16 +88,26 @@ with open("RandomStudents.csv", "r") as students_details_file:
                                                                 random_choice_candadates))) >= 16:
                     continue
 
+                #
+                # if key == "Faculty Officer":
+                #
+                #
                 if choice not in random_choice_candadates:
                     print(i)
                     if i % 4 == 0 or first_run:  # every 4th candidate put it in a group
-                        current_group_gsu_val = key + ' group {}'.format(val) #name of the group
+
+                        if key == "Faculty Officer":
+                            current_group_gsu_val = ''
+                            pass
+                        else:
+                            current_group_gsu_val = key + ' group {}'.format(val) #name of the group
                         first_run = False
                         val -=1
-                    choice["position"] = key
                     choice["group"] = current_group_gsu_val
+                    choice["position"] = key
+
                     choice['campaign'] = fake.text()[:random.randint(5,20)]
-                    choice['promises'] = fake.text() 
+                    choice['promises'] = fake.text()
                     choice['logoref'] = None # TODO: GENERATE RANDOM PROFILE IMAGES
                     unique = True
                     random_choice_candadates.append(choice)
