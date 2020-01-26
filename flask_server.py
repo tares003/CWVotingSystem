@@ -37,11 +37,12 @@ def tk_gui():
 # print(sort_by_cadidates(filtered))
 # #
 # # print(pd_df[pd_df.position == 'President'])
-#
+
+
 if __name__ == "__main__":
     app.config.from_object("config.DevelopmentConfig")
-    read_student_text_file('voting_system/RandomStudents.csv', remove_dups=True)
-    read_candadates_text_file('voting_system/RandomCandidates.csv', remove_dups=True)
+    read_student_text_file('RandomStudents.csv', remove_dups=True)
+    read_candadates_text_file('RandomCandidates.csv', remove_dups=True)
 
     # Can use cfg files by parsing as VOTINGSYS_SETTINGS=path/to/Config/file.cfg
     # overrides the the setting from the previous setting

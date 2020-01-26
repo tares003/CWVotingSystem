@@ -118,12 +118,13 @@ class Student(login_management):
 
 class Candidate(Student):
     def __init__(self, name, login_id, password, dob, faculty, position, logoref=None, campaign=None, promises=None,
-                 has_registered=False):
+                 has_registered=False, group=None):
         super().__init__(name, login_id, password, dob, faculty, has_registered)
         self.position = position
         self.campaign_name = campaign  # candidates campaigning name
         self.campaign_promises = promises
         self.logo = logoref
+        self.group = group
 
     def get_user_ppi_info(self):
         """

@@ -8,3 +8,5 @@ flask-restplus
 flask-login
 PrettyTable
 Flask-Session
+zodburi
+ZODB
