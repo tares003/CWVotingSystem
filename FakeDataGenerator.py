@@ -51,22 +51,40 @@ with open("RandomStudents.csv", "r") as students_details_file:
     for row in csv_reader:
         all_Students.append(dict(row))
 
+    gsu_position = dict()
+
+    #creating unique position for GSU officer
+    # for i in range(1,postions['GSU Officers']+1):
+    #     gsu_position['Position '+postions]=0 #setting 0 to all all the positon
+
+
+    first_run = True
     for key, val in postions.items():  # Each position
-        for i in range(val * 4):  # 4 candadates per position
+        for i in range(1, val * 4+1):  # 4 candadates per position
+            #for unique candidates
             unique = False
             while not unique:
                 choice = random.choice(all_Students)
                 # max 16 candidates per faculty
-                print(key, val, i)
-                print(choice['faculty'])
-                print(all_Students[0]['faculty'])
+                # print(key, val, i)
+                # print(choice['faculty'])
+                # print(all_Students[0]['faculty'])
+                # TODO: Make it so it restricted to studen't GSU Position
 
                 # only 16 candidates for the each Faculty
-                if key == "Faculty Officer" and len(list(filter(lambda x: x['faculty'] == choice['faculty'] and x['position'] == "Faculty Officer", random_choice_candadates))) >= 16:
+                if key == "Faculty Officer" and len(list(filter(lambda x: x['faculty'] == choice['faculty']
+                                                                          and x['position'] == "Faculty Officer",
+                                                                random_choice_candadates))) >= 16:
                     continue
 
                 if choice not in random_choice_candadates:
+                    print(i)
+                    if i % 4 == 0 or first_run:  # every 4th candidate put it in a group
+                        current_group_gsu_val = key + ' group {}'.format(val) #name of the group
+                        first_run = False
+                        val -=1
                     choice["position"] = key
+                    choice["group"] = current_group_gsu_val
                     choice['campaign'] = fake.text()[:random.randint(5,20)]
                     choice['promises'] = fake.text() 
                     choice['logoref'] = None # TODO: GENERATE RANDOM PROFILE IMAGES
@@ -75,7 +93,7 @@ with open("RandomStudents.csv", "r") as students_details_file:
                 else:
                     continue
 with open("RandomCandidates.csv", "w", newline="") as f:
-    writer = csv.DictWriter(f, fieldnames=["name", "Registered", "dob", "id", "position", 'faculty', "password", 'campaign', 'promises', 'logoref'],
+    writer = csv.DictWriter(f, fieldnames=["name", "Registered", "dob", "id", "position", "group",'faculty', "password", 'campaign', 'promises', 'logoref'],
                             quoting=csv.QUOTE_ALL)
     header_written = False
     for i in random_choice_candadates:
