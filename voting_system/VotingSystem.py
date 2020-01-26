@@ -3,16 +3,18 @@ import sys
 from datetime import datetime, timedelta
 from functools import wraps
 
-from flask import Flask, flash, session
+from flask import Flask, flash, session, current_app
 from flask import request, render_template, redirect, url_for
 from flask_login import login_user, LoginManager, login_required, logout_user, current_user
 from flask_restplus import reqparse
 from prettytable import PrettyTable
-#for local databases
-from flaskext.zodb import ZODB
+from flask_zodb import ZODB
+from .exception import *
+from ZODB import FileStorage
+# for local databases
 import transaction
 
-#model of persons
+# model of persons
 from .models import Student, Candidate
 
 app = Flask(__name__, template_folder="templates")
@@ -20,8 +22,9 @@ app = Flask(__name__, template_folder="templates")
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-#Local Database
-db = ZODB(app)
+# Local Database
+Votesdb = ZODB(app)
+db2 = ZODB(app)
 
 ALL_STUDENTS = []  # storing all the student from the text file
 ALL_CANDIDATES = []  # storing all the candidates from the text file
@@ -32,11 +35,14 @@ ALL_CANDIDATES = []  # storing all the candidates from the text file
 
 @login_manager.user_loader
 def load_user(user_id):
-    #method  for the login manager
+    # method  for the login manager
     return get_student_by_id(user_id)
 
 
 def get_cadidates_by_position(position):
+    """
+    Returns Candidates by a position
+    """
     global ALL_CANDIDATES
     candidates = []
     for candidate in ALL_CANDIDATES:
@@ -85,7 +91,6 @@ def map_the_objects(class_to_map_to, iterable):
     :param iterable: iterable- needs to be dict
     :return: list containing all the objects
     """
-    next(iterable) #removes the first line
     return [class_to_map_to(**dict(details_row)) for details_row in iterable]
 
 
@@ -128,7 +133,7 @@ def dups_removal_selction(list_of__dups_usr_Objects, table_column, original_List
             selections = int(input(table))
             if 0 <= selections <= len(list_of__dups_usr_Objects) - 1:
                 print("Selected ID %s \n removed user %s " % (
-                selections, str(list_of__dups_usr_Objects[selections].get_user_ppi_info())))
+                    selections, str(list_of__dups_usr_Objects[selections].get_user_ppi_info())))
                 valid = True
                 for i in range(len(list_of__dups_usr_Objects)):  # removing all others except selected one
                     if i == selections:
@@ -145,7 +150,6 @@ def dups_removal_selction(list_of__dups_usr_Objects, table_column, original_List
             print('ERROR Removing Duplicates')
             import traceback
             traceback.print_exc()
-            sys.exit()
 
     # Can be used if you want to be removed by user id
     # while not valid:
@@ -174,12 +178,15 @@ def dups_removal_selction(list_of__dups_usr_Objects, table_column, original_List
 def remove_duplicates(list_of_user_object):
     """
     Removes the duplicate user
+
+    Uses Hash to remove duplicates
     """
     if not list_of_user_object:
         print('Empty list')
         return None
-    all_candidates_hash = [hash(candidates) for candidates in list_of_user_object]  # all the hash set
-    all_duplicates_hashes = list_all_duplicates(all_candidates_hash)
+    all_user_hash = [hash(user) for user in list_of_user_object]  # all the hash set
+
+    all_duplicates_hashes = list_all_duplicates(all_user_hash)
     # for user in list_of_user_object:
     #     c_hash = hash(user)
     #     if c_hash in all_candidates_hash and all_candidates_hash.count(c_hash) > 1:
@@ -188,10 +195,11 @@ def remove_duplicates(list_of_user_object):
             print('found duplicate')
             table_cols = ['id', 'first name', 'dob', 'login id', 'faculty']
             dups_users_with_this_hash = get_users_with_matching_hash(dup_hash, list_of_user_object)
-            # using 1st object is check object type
+            # using 1st base class to check object type
             if isinstance(dups_users_with_this_hash[0], Candidate):
                 dups_removal_selction(dups_users_with_this_hash, table_cols.append('position'),
                                       list_of_user_object)  # extra col for cadidates
+            # for student
             elif isinstance(dups_users_with_this_hash[0], Student):
                 dups_removal_selction(dups_users_with_this_hash, table_cols, list_of_user_object)
             else:
@@ -200,33 +208,100 @@ def remove_duplicates(list_of_user_object):
         print('NO Duplicates found')
 
 
-def read_student_text_file(text_file_name, remove_dups = False):
+def read_student_text_file(text_file_name, remove_dups=False):
     with open(text_file_name, 'r') as student_file:
         required_fields_in_csv_file = ["name", "has_registered", "dob", "login_id", "faculty",
-                                       "password", 'directory_to_user_image']
-        # TODO: Remove  Duplicate students
-        csv_reader = csv.DictReader(student_file,
-                                    fieldnames=required_fields_in_csv_file)
+                                       "password"]
+        # TODO: Fix Validataion
+        valid = fields_validation(required_fields_in_csv_file, text_file_name)  # Field validation
+        if isinstance(valid, bool) and valid:
+            optional_fields = ['directory_to_user_image']
 
-        global ALL_STUDENTS
-        ALL_STUDENTS = map_the_objects(Student, csv_reader)
-        if remove_dups:
-            remove_duplicates(ALL_STUDENTS)
+            csv_reader = csv.DictReader(student_file,
+                                        fieldnames=[*required_fields_in_csv_file, *optional_fields])
+
+            global ALL_STUDENTS
+            next(csv_reader)  # excludes the headders/ first line
+            ALL_STUDENTS = map_the_objects(Student, csv_reader)
+
+            if remove_dups:
+                remove_duplicates(ALL_STUDENTS)
+        elif isinstance(valid, tuple):
+            raise NotValidData("Missing Data from: %s" % text_file_name,
+                               'column data Missing for %s row %s %s' % (valid))
 
 
-def read_candadates_text_file(text_file_name,remove_dups = False):
+def fields_validation(required_headers, file):
+    """Checks  if all the fields are are in the CSV File"""
+    with open(file) as test_file:
+        csv_reader = csv.DictReader(test_file,
+                                    fieldnames=required_headers)
+        next(csv_reader)  # skips headders
+        for row in csv_reader:
+            if row:
+                for header in required_headers:
+                    if row[header] in (None, ""):
+                        # returns
+                        print(row)
+                        return False, header, dict(row)
+        return True
+
+
+def get_app_config_variable(key):
+    """
+    returns the value for the config
+    """
+    if app.config.get(key):
+        return app.config.get(key)
+    return None
+
+
+def read_candadates_text_file(text_file_name, remove_dups=False, validate_cadidate_with_config=True):
     with open(text_file_name) as candidate_file:
         required_fields_in_csv_file = ["name", "has_registered", "dob", "login_id",
-                                       "position", "faculty", "password",
-                                       'campaign', 'promises', 'logoref']  # logoref - contain ref directory of img
-        csv_reader = csv.DictReader(candidate_file,
-                                    fieldnames=required_fields_in_csv_file)
+                                       "position", 'group', "faculty", "password"]  # Required headers
 
-        global ALL_CANDIDATES
+        # TODO: Fix Validataion + check 4 candidates for each position + faculty officers needs to from faculty
 
-        ALL_CANDIDATES = map_the_objects(Candidate, csv_reader)
-        if remove_dups:
-            remove_duplicates(ALL_CANDIDATES)
+        valid = fields_validation(required_fields_in_csv_file,
+                                  text_file_name)  # Field validation check all the fields are valid
+
+        if isinstance(valid, bool) and valid:
+            optional_fields = ['campaign', 'promises',
+                               'logoref']  # optional headers + logoref - contain ref directory of img
+
+            csv_reader = csv.DictReader(candidate_file,
+                                        fieldnames=[*required_fields_in_csv_file, *optional_fields])
+
+            global ALL_CANDIDATES
+            next(csv_reader)  # excludes the headders/ first line
+            ALL_CANDIDATES = map_the_objects(Candidate, csv_reader)
+            if remove_dups:
+                remove_duplicates(ALL_CANDIDATES)
+            configs = ["NO_FACULTY_OFFICERS_POSITION",
+                       "NO_PRECEDENT_POSITION",
+                       "NO_GSU_OFFICERS_POSITION"]
+
+            if validate_cadidate_with_config:  # validates all the confis
+                # confirms if the loaded candidates matches with the config
+
+                for config in configs:
+                    print(config)
+                    position_name, current_config_value = get_app_config_variable(config)
+                    if current_config_value:
+                        if not len(get_cadidates_by_position(position_name)) / get_app_config_variable(
+                                "NO_CANDIDATES_PER_POSITION") == \
+                               current_config_value:  # check if number of candidate loaded matches with config
+                            raise ConfigError(config, 'Number of candidates loaded was %s, does match number specified'
+                                                      'in config %s with config for %s' %
+                                              (len(get_cadidates_by_position(position_name)), current_config_value,
+                                               config))
+                    else:
+                        raise ConfigError(config, 'Configuration missing')
+
+        elif isinstance(valid, tuple):
+            raise NotValidData("Missing Data from: %s" % text_file_name,
+                               'column data Missing for %s row %s %s' % (valid))
 
 
 logindetailsPasrsing = reqparse.RequestParser()
@@ -284,38 +359,39 @@ def selection(position):
             if candidates:
                 # print(current_user.__dict__)
                 print(current_user.get_user_faculty())
+                print(candidates[0].group)
                 if position == 'faculty officer':
-                    #Filter out so only returns student's  faculty.
+                    # Filter out so only returns student's  faculty.
                     candidates = list(filter(lambda x: x.get_user_faculty() == current_user.get_user_faculty(),
-                                                     candidates))
+                                             candidates))
 
                     # print(faculty_candidates[0].__dict__)
+                groups = {}
+                # Putting the candidates in a group
+                for candidate in candidates:
+                    if candidate.group not in groups.keys():
+                        groups[candidate.group] = [candidate]
+                    else:
+                        groups[candidate.group].append(candidate)
 
-                candidates = {position: candidates}
+                candidates = {position: groups}
 
                 return render_template("selection.html", candidates=candidates)
-
             else:
                 return "No Candidates for this %s position " % position
         else:
             return "position not provided"
 
     elif request.method == 'POST':
-        logindetailsPasrsing = reqparse.RequestParser()
-        logindetailsPasrsing.add_argument('position', type=str, required=True, help='position data missing')
-        logindetailsPasrsing.add_argument('selection', type=str, required=True, help='no selection')
-
-        request
-
-
+        selection_data = reqparse.RequestParser()
+        selection_data.add_argument('position', type=str, required=True, help='position data missing')
+        selection_data.add_argument('selection', type=str, required=True, help='no selection')
 
 
 # @app.route('/selection/<position>')
 # @login_required
 # def users_vote():
 #     pass
-
-
 
 
 def view_all_results():
