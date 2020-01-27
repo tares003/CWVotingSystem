@@ -101,10 +101,12 @@
                 contentType : "application/json",
                 data: JSON.stringify(card_selection_data), // this will get form fields
                 success: function (res) {
-                    alert(res);
+                    console.log(res);
+                    alert(res.toString());
                 },
                 error : function(error) {
-                    alert(error)
+                    console.log(error)
+                    alert(error.responseText)
                 }
             });
 
