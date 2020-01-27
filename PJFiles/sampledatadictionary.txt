@@ -31,17 +31,19 @@
         "Katherine Aguilar": "1",
         "Kimberly Ball": "2",
         "Nicholas King": "3",
-	"Heather Garcia": "4"
+    "Heather Garcia": "4"
       }
     }
   }
+}
+{
   "Brenda33657": {
     "faculty officer": {
       "Faculty Officer group 1": {
         "David Gay": "4",
         "April Johnson": "3"
-	"Tyler Terrell": "2"
-	"Sara Campbell": "1"
+    "Tyler Terrell": "2"
+    "Sara Campbell": "1"
       },
       "Faculty Officer group 2": {
         "Diana Blackburn": "1",
@@ -67,17 +69,19 @@
         "Katherine Aguilar": "1",
         "Kimberly Ball": "2",
         "Nicholas King": "3",
-	"Heather Garcia": "4"
+    "Heather Garcia": "4"
       }
     }
   }
+}
+{
   "Tiffany8225": {
     "faculty officer": {
       "Faculty Officer group 1": {
         "David Gay": "1",
         "April Johnson": "3"
-	"Tyler Terrell": "2"
-	"Sara Campbell": "4"
+    "Tyler Terrell": "2"
+    "Sara Campbell": "4"
       },
       "Faculty Officer group 2": {
         "Diana Blackburn": "1",
@@ -107,6 +111,8 @@
       }
     }
   }
+}
+{
   "Matthew4640": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -143,6 +149,8 @@
       }
     }
   }
+}
+{
   "Anna2108": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -179,6 +187,8 @@
       }
     }
   }
+}
+{
   "Maxwell3249": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -215,6 +225,8 @@
       }
     }
   }
+}
+{
   "Eric4514": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -251,6 +263,8 @@
       }
     }
   }
+}
+{
   "Danielle33922": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -287,6 +301,8 @@
       }
     }
   }
+}
+{
   "Amber4545": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -319,8 +335,8 @@
         "Katherine Aguilar": "2",
         "Kimberly Ball": "1",
         "Nicholas King": "4",
-	"Heather Garcia": "3"
+    "Heather Garcia": "3"
       }
     }
   }
-}
+}	

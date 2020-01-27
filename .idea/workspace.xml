@@ -2,16 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95085b7a-4258-4514-8c31-29d20cd91529" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flask_zodb/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask_zodb/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask_zodb/flask_zodb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flask_zodb/flask_zodb_modified.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local_database/test.fs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local_database/test.fs.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local_database/test.fs.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local_database/test.fs.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local_database/votes.fs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local_database/votes.fs.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local_database/votes.fs.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FakeDataGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/FakeDataGenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PJFiles/COMP1811_CW1ProjectReportTemplate_1920.docx" beforeDir="false" afterPath="$PROJECT_DIR$/PJFiles/COMP1811_CW1ProjectReportTemplate_1920.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PJFiles/sampledatadictionary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PJFiles/sampledatadictionary.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RandomCandidates.csv" beforeDir="false" afterPath="$PROJECT_DIR$/RandomCandidates.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voting_system/VotingSystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/VotingSystem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/voting_system/templates/selection.html" beforeDir="false" afterPath="$PROJECT_DIR$/voting_system/templates/selection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/Candidates.txt" beforeDir="false" afterPath="$PROJECT_DIR$/local_database/votes.fs.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/RandomCandidates.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/RandomStudents.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/StudentVoters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/Votes.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/VotingSystem.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/exception.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/js/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/templates/Login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/templates/components/list_candidates.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/templates/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/templates/logout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/templates/selection.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/voting_system/templates/welcomePage.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,12 +69,16 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/flask_zodb" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -75,7 +96,7 @@
       <recent name="$PROJECT_DIR$/PJFiles" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.flask_server">
+  <component name="RunManager" selected="Python.debug">
     <configuration name="FakeDataGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CWVotingSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,10 +211,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.debug" />
         <item itemvalue="Python.flask_server" />
         <item itemvalue="Python.VotingSystem" />
         <item itemvalue="Python.FakeDataGenerator" />
-        <item itemvalue="Python.debug" />
         <item itemvalue="Python.run" />
       </list>
     </recent_temporary>
@@ -347,7 +368,42 @@
       <option name="project" value="LOCAL" />
       <updated>1580082984928</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="latest release">
+      <created>1580131713087</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1580131713087</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Working sample data">
+      <created>1580132004756</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1580132004756</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Removed alerts">
+      <created>1580132515710</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1580132515710</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fixed alert text for response and error">
+      <created>1580132549791</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1580132549791</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Fixed alert text for response and error">
+      <created>1580135372276</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1580135372277</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -374,6 +430,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="addded pwd field" />
     <MESSAGE value="Added removing duplicates feature" />
     <MESSAGE value="Added login  + View of Candidates" />
@@ -385,7 +442,11 @@
     <MESSAGE value="latest" />
     <MESSAGE value="Displays candidates in grouped list" />
     <MESSAGE value="issue with last release" />
-    <option name="LAST_COMMIT_MESSAGE" value="issue with last release" />
+    <MESSAGE value="latest release" />
+    <MESSAGE value="Working sample data" />
+    <MESSAGE value="Removed alerts" />
+    <MESSAGE value="Fixed alert text for response and error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed alert text for response and error" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -406,62 +467,70 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="468" y="313" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1578240319047" />
-    <state x="206" y="52" key="CommitChangelistDialog2" timestamp="1580082984783">
+    <state x="206" y="52" key="CommitChangelistDialog2" timestamp="1580135372095">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="206" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1580082984783" />
+    <state x="206" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1580135372095" />
     <state x="206" y="67" key="CommitChangelistDialog2/0.23.1440.839@0.23.1440.839" timestamp="1580064679811" />
     <state width="1440" height="438" key="DebuggerActiveHint" timestamp="1580084966173">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1440" height="438" key="DebuggerActiveHint/0.0.1440.900@0.0.1440.900" timestamp="1580084966173" />
     <state width="1440" height="409" key="DebuggerActiveHint/0.23.1440.839@0.23.1440.839" timestamp="1580052250760" />
-    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog" timestamp="1580083657380">
+    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog" timestamp="1580139718043">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1580083657380" />
+    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1580139718043" />
     <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.839@0.23.1440.839" timestamp="1580072715131" />
-    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.840@0.23.1440.840" timestamp="1579653709105" />
-    <state width="1419" height="254" key="GridCell.Tab.0.bottom" timestamp="1580125078122">
+    <state x="144" y="79" width="1152" height="720" key="DiffContextDialog/0.23.1440.840@0.23.1440.840" timestamp="1580133113959" />
+    <state width="1134" height="346" key="GridCell.Tab.0.bottom" timestamp="1580139582378">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="254" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1580125078122" />
+    <state width="1134" height="346" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1580139582378" />
     <state width="914" height="335" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1579527648247" />
     <state width="1419" height="173" key="GridCell.Tab.0.bottom/0.23.1440.838@0.23.1440.838" timestamp="1579471379827" />
     <state width="1207" height="111" key="GridCell.Tab.0.bottom/0.23.1440.839@0.23.1440.839" timestamp="1580072669239" />
     <state width="891" height="289" key="GridCell.Tab.0.bottom/0.23.1440.840@0.23.1440.840" timestamp="1580074137768" />
     <state width="1419" height="335" key="GridCell.Tab.0.bottom/0.23.1440.841@0.23.1440.841" timestamp="1579710640341" />
-    <state width="1419" height="254" key="GridCell.Tab.0.center" timestamp="1580125078119">
+    <state width="1134" height="346" key="GridCell.Tab.0.center" timestamp="1580139582377">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="254" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1580125078119" />
+    <state width="1134" height="346" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1580139582377" />
     <state width="914" height="335" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1579527648224" />
     <state width="1419" height="173" key="GridCell.Tab.0.center/0.23.1440.838@0.23.1440.838" timestamp="1579471379826" />
     <state width="1207" height="111" key="GridCell.Tab.0.center/0.23.1440.839@0.23.1440.839" timestamp="1580072669238" />
     <state width="891" height="289" key="GridCell.Tab.0.center/0.23.1440.840@0.23.1440.840" timestamp="1580074137767" />
     <state width="1419" height="335" key="GridCell.Tab.0.center/0.23.1440.841@0.23.1440.841" timestamp="1579710640340" />
-    <state width="1419" height="254" key="GridCell.Tab.0.left" timestamp="1580125078118">
+    <state width="1134" height="346" key="GridCell.Tab.0.left" timestamp="1580139582376">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="254" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1580125078118" />
+    <state width="1134" height="346" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1580139582376" />
     <state width="914" height="335" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1579527648203" />
     <state width="1419" height="173" key="GridCell.Tab.0.left/0.23.1440.838@0.23.1440.838" timestamp="1579471379826" />
     <state width="1207" height="111" key="GridCell.Tab.0.left/0.23.1440.839@0.23.1440.839" timestamp="1580072669237" />
     <state width="891" height="289" key="GridCell.Tab.0.left/0.23.1440.840@0.23.1440.840" timestamp="1580074137767" />
     <state width="1419" height="335" key="GridCell.Tab.0.left/0.23.1440.841@0.23.1440.841" timestamp="1579710640339" />
-    <state width="1419" height="254" key="GridCell.Tab.0.right" timestamp="1580125078121">
+    <state width="1134" height="346" key="GridCell.Tab.0.right" timestamp="1580139582377">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="254" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1580125078121" />
+    <state width="1134" height="346" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1580139582377" />
     <state width="914" height="335" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1579527648244" />
     <state width="1419" height="173" key="GridCell.Tab.0.right/0.23.1440.838@0.23.1440.838" timestamp="1579471379827" />
     <state width="1207" height="111" key="GridCell.Tab.0.right/0.23.1440.839@0.23.1440.839" timestamp="1580072669238" />
     <state width="891" height="289" key="GridCell.Tab.0.right/0.23.1440.840@0.23.1440.840" timestamp="1580074137768" />
     <state width="1419" height="335" key="GridCell.Tab.0.right/0.23.1440.841@0.23.1440.841" timestamp="1579710640340" />
-    <state x="328" y="168" key="RollbackChangesDialog" timestamp="1580085212936">
+    <state x="144" y="79" key="MergeDialog" timestamp="1580139578794">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="328" y="168" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1580085212936" />
+    <state x="144" y="79" key="MergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1580139578794" />
+    <state x="433" y="173" key="MultipleFileMergeDialog" timestamp="1580139578842">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="433" y="173" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1580139578842" />
+    <state x="328" y="168" key="RollbackChangesDialog" timestamp="1580133261207">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="328" y="168" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1580133261207" />
     <state x="229" y="62" key="SettingsEditor" timestamp="1579714408684">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -472,20 +541,20 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="572" y="373" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1580083004730" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1580083580121">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1580132560565">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1580083580121" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1580132560565" />
     <state x="320" y="200" key="Vcs.Push.Dialog.v2/0.23.1440.839@0.23.1440.839" timestamp="1580064689952" />
     <state width="720" height="441" key="XDebugger.FullValuePopup" timestamp="1580093473773">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="720" height="441" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1580093473773" />
     <state width="720" height="411" key="XDebugger.FullValuePopup/0.23.1440.839@0.23.1440.839" timestamp="1580044772987" />
-    <state x="100" y="83" width="1240" height="751" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580085299634">
+    <state x="100" y="83" width="1240" height="751" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580133013999">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="100" y="83" width="1240" height="751" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1580085299634" />
+    <state x="100" y="83" width="1240" height="751" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1580133013999" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.839@0.23.1440.839" timestamp="1580052750542" />
     <state x="399" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1579972434192">
       <screen x="0" y="0" width="1440" height="900" />
@@ -495,10 +564,10 @@
       <screen x="0" y="23" width="1440" height="839" />
     </state>
     <state x="353" y="64" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.23.1440.839@0.23.1440.839" timestamp="1580066536757" />
-    <state x="216" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580085299623">
+    <state x="216" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580139569203">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="216" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1580085299623" />
+    <state x="216" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1580139569203" />
     <state x="216" y="366" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.839@0.23.1440.839" timestamp="1580072663610" />
     <state x="285" y="193" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1578616325548">
       <screen x="0" y="0" width="1440" height="900" />
@@ -535,6 +604,11 @@
           <url>file://$PROJECT_DIR$/voting_system/VotingSystem.py</url>
           <line>313</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/debug.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
