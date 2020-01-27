@@ -52,11 +52,10 @@
                 type: "POST",
                 data: $('#login_form').serialize(), // this will get form fields
                 success: function (res) {
-                    alert(res);
                     window.location.href = "/selection/president";
                 },
                 error : function(error) {
-                    alert(error)
+                    alert(error.responseText)
                 }
             });
 
