@@ -35,8 +35,6 @@
       }
     }
   }
-}
-{
   "Brenda33657": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -73,8 +71,6 @@
       }
     }
   }
-}
-{
   "Tiffany8225": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -111,8 +107,6 @@
       }
     }
   }
-}
-{
   "Matthew4640": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -149,8 +143,6 @@
       }
     }
   }
-}
-{
   "Anna2108": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -187,8 +179,6 @@
       }
     }
   }
-}
-{
   "Maxwell3249": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -225,8 +215,6 @@
       }
     }
   }
-}
-{
   "Eric4514": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -263,8 +251,6 @@
       }
     }
   }
-}
-{
   "Danielle33922": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -301,8 +287,6 @@
       }
     }
   }
-}
-{
   "Amber4545": {
     "faculty officer": {
       "Faculty Officer group 1": {
@@ -339,4 +323,4 @@
       }
     }
   }
-}	
+}
