@@ -3,21 +3,21 @@
     "faculty officer": {
       "Faculty Officer group 1": {
         "David Gay": "1",
-        "April Johnson": "2"
-	"Tyler Terrell": "3"
-	"Sara Campbell": "4"
+        "April Johnson": "2",
+        "Tyler Terrell": "3",
+        "Sara Campbell": "4"
       },
       "Faculty Officer group 2": {
         "Diana Blackburn": "1",
         "Tony Sims": "2",
-	"Jason Horton": "3",
-	"Marcus Rhodes": "4"
+        "Jason Horton": "3",
+        "Marcus Rhodes": "4"
       },
       "Faculty Officer group 3": {
         "Kathleen Scott": "2",
         "Elizabeth Chapman": "1",
-	"Stacey Monroe": "3",
-	"Michael Murray": "4"
+        "Stacey Monroe": "3",
+        "Michael Murray": "4"
       },
       "Faculty Officer group 4": {
         "Joshua Dunn": "1",
@@ -31,31 +31,29 @@
         "Katherine Aguilar": "1",
         "Kimberly Ball": "2",
         "Nicholas King": "3",
-    "Heather Garcia": "4"
+        "Heather Garcia": "4"
       }
     }
-  }
-}
-{
+  },
   "Brenda33657": {
     "faculty officer": {
       "Faculty Officer group 1": {
         "David Gay": "4",
-        "April Johnson": "3"
-    "Tyler Terrell": "2"
-    "Sara Campbell": "1"
+        "April Johnson": "3",
+        "Tyler Terrell": "2",
+        "Sara Campbell": "1"
       },
       "Faculty Officer group 2": {
         "Diana Blackburn": "1",
         "Tony Sims": "2",
-	"Jason Horton": "3",
-	"Marcus Rhodes": "4"
+        "Jason Horton": "3",
+        "Marcus Rhodes": "4"
       },
       "Faculty Officer group 3": {
         "Kathleen Scott": "1",
         "Elizabeth Chapman": "2",
-	"Stacey Monroe": "3",
-	"Michael Murray": "4"
+        "Stacey Monroe": "3",
+        "Michael Murray": "4"
       },
       "Faculty Officer group 4": {
         "Joshua Dunn": "2",
@@ -69,31 +67,29 @@
         "Katherine Aguilar": "1",
         "Kimberly Ball": "2",
         "Nicholas King": "3",
-    "Heather Garcia": "4"
+        "Heather Garcia": "4"
       }
     }
-  }
-}
-{
+  },
   "Tiffany8225": {
     "faculty officer": {
       "Faculty Officer group 1": {
         "David Gay": "1",
-        "April Johnson": "3"
-    "Tyler Terrell": "2"
-    "Sara Campbell": "4"
+        "April Johnson": "3",
+        "Tyler Terrell": "2",
+        "Sara Campbell": "4"
       },
       "Faculty Officer group 2": {
         "Diana Blackburn": "1",
         "Tony Sims": "2",
-	"Jason Horton": "3",
-	"Marcus Rhodes": "4"
+        "Jason Horton": "3",
+        "Marcus Rhodes": "4"
       },
       "Faculty Officer group 3": {
         "Kathleen Scott": "2",
         "Elizabeth Chapman": "1",
-	"Stacey Monroe": "3",
-	"Michael Murray": "4"
+        "Stacey Monroe": "3",
+        "Michael Murray": "4"
       },
       "Faculty Officer group 4": {
         "Joshua Dunn": "2",
@@ -107,31 +103,29 @@
         "Katherine Aguilar": "1",
         "Kimberly Ball": "3",
         "Nicholas King": "2",
-	"Heather Garcia": "4"
+        "Heather Garcia": "4"
       }
     }
-  }
-}
-{
+  },
   "Matthew4640": {
     "faculty officer": {
       "Faculty Officer group 1": {
         "David Gay": "4",
-        "April Johnson": "1"
-	"Tyler Terrell": "2"
-	"Sara Campbell": "3"
+        "April Johnson": "1",
+        "Tyler Terrell": "2",
+        "Sara Campbell": "3"
       },
-      ""Faculty Officer group 2": {
+      "Faculty Officer group": {
         "Diana Blackburn": "4",
         "Tony Sims": "3",
-	"Jason Horton": "2",
-	"Marcus Rhodes": "1"
+        "Jason Horton": "2",
+        "Marcus Rhodes": "1"
       },
       "Faculty Officer group 3": {
         "Kathleen Scott": "2",
         "Elizabeth Chapman": "1",
-	"Stacey Monroe": "3",
-	"Michael Murray": "4"
+        "Stacey Monroe": "3",
+        "Michael Murray": "4"
       },
       "Faculty Officer group 4": {
         "Joshua Dunn": "4",
@@ -139,37 +133,27 @@
         "Erin Gregory": "2",
         "Jessica Walker": "1"
       }
-    },
-    "president": {
-      "GSU Officers group 0": {
-        "Katherine Aguilar": "4",
-        "Kimberly Ball": "2",
-        "Nicholas King": "3",
-	"Heather Garcia": "1"
-      }
     }
-  }
-}
-{
+  },
   "Anna2108": {
     "faculty officer": {
       "Faculty Officer group 1": {
         "David Gay": "2",
-        "April Johnson": "1"
-	"Tyler Terrell": "3"
-	"Sara Campbell": "4"
+        "April Johnson": "1",
+        "Tyler Terrell": "3",
+        "Sara Campbell": "4"
       },
       "Faculty Officer group 2": {
         "Diana Blackburn": "2",
         "Tony Sims": "1",
-	"Jason Horton": "3",
-	"Marcus Rhodes": "4"
+        "Jason Horton": "3",
+        "Marcus Rhodes": "4"
       },
       "Faculty Officer group 3": {
         "Kathleen Scott": "2",
         "Elizabeth Chapman": "1",
-	"Stacey Monroe": "3",
-	"Michael Murray": "4"
+        "Stacey Monroe": "3",
+        "Michael Murray": "4"
       },
       "Faculty Officer group 4": {
         "Joshua Dunn": "2",
@@ -183,31 +167,29 @@
         "Katherine Aguilar": "1",
         "Kimberly Ball": "3",
         "Nicholas King": "2",
-	"Heather Garcia": "4"
+        "Heather Garcia": "4"
       }
     }
-  }
-}
-{
+  },
   "Maxwell3249": {
     "faculty officer": {
       "Faculty Officer group 1": {
         "David Gay": "1",
-        "April Johnson": "2"
-	"Tyler Terrell": "3"
-	"Sara Campbell": "4"
+        "April Johnson": "2",
+        "Tyler Terrell": "3",
+        "Sara Campbell": "4"
       },
       "Faculty Officer group 2": {
         "Diana Blackburn": "2",
         "Tony Sims": "4",
-	"Jason Horton": "3",
-	"Marcus Rhodes": "1"
+        "Jason Horton": "3",
+        "Marcus Rhodes": "1"
       },
       "Faculty Officer group 3": {
         "Kathleen Scott": "2",
         "Elizabeth Chapman": "1",
-	"Stacey Monroe": "3",
-	"Michael Murray": "4"
+        "Stacey Monroe": "3",
+        "Michael Murray": "4"
       },
       "Faculty Officer group 4": {
         "Joshua Dunn": "4",
@@ -221,31 +203,29 @@
         "Katherine Aguilar": "4",
         "Kimberly Ball": "3",
         "Nicholas King": "1",
-	"Heather Garcia": "2"
+        "Heather Garcia": "2"
       }
     }
-  }
-}
-{
+  },
   "Eric4514": {
     "faculty officer": {
       "Faculty Officer group 1": {
         "David Gay": "1",
-        "April Johnson": "2"
-	"Tyler Terrell": "4"
-	"Sara Campbell": "2"
+        "April Johnson": "2",
+        "Tyler Terrell": "4",
+        "Sara Campbell": "2"
       },
       "Faculty Officer group 2": {
         "Diana Blackburn": "4",
         "Tony Sims": "2",
-	"Jason Horton": "3",
-	"Marcus Rhodes": "1"
+        "Jason Horton": "3",
+        "Marcus Rhodes": "1"
       },
       "Faculty Officer group 3": {
         "Kathleen Scott": "2",
         "Elizabeth Chapman": "3",
-	"Stacey Monroe": "1",
-	"Michael Murray": "4"
+        "Stacey Monroe": "1",
+        "Michael Murray": "4"
       },
       "Faculty Officer group 4": {
         "Joshua Dunn": "4",
@@ -259,31 +239,29 @@
         "Katherine Aguilar": "1",
         "Kimberly Ball": "2",
         "Nicholas King": "4",
-	"Heather Garcia": "3"
+        "Heather Garcia": "3"
       }
     }
-  }
-}
-{
+  },
   "Danielle33922": {
     "faculty officer": {
       "Faculty Officer group 1": {
         "David Gay": "3",
-        "April Johnson": "2"
-	"Tyler Terrell": "1"
-	"Sara Campbell": "4"
+        "April Johnson": "2",
+        "Tyler Terrell": "1",
+        "Sara Campbell": "4"
       },
       "Faculty Officer group 2": {
         "Diana Blackburn": "4",
         "Tony Sims": "1",
-	"Jason Horton": "3",
-	"Marcus Rhodes": "2"
+        "Jason Horton": "3",
+        "Marcus Rhodes": "2"
       },
       "Faculty Officer group 3": {
         "Kathleen Scott": "1",
         "Elizabeth Chapman": "2",
-	"Stacey Monroe": "3",
-	"Michael Murray": "4"
+        "Stacey Monroe": "3",
+        "Michael Murray": "4"
       },
       "Faculty Officer group 4": {
         "Joshua Dunn": "1",
@@ -297,31 +275,29 @@
         "Katherine Aguilar": "4",
         "Kimberly Ball": "1",
         "Nicholas King": "3",
-	"Heather Garcia": "2"
+        "Heather Garcia": "2"
       }
     }
-  }
-}
-{
+  },
   "Amber4545": {
     "faculty officer": {
       "Faculty Officer group 1": {
         "David Gay": "3",
-        "April Johnson": "4"
-	"Tyler Terrell": "1"
-	"Sara Campbell": "2"
+        "April Johnson": "4",
+        "Tyler Terrell": "1",
+        "Sara Campbell": "2"
       },
       "Faculty Officer group 2": {
         "Diana Blackburn": "3",
         "Tony Sims": "1",
-	"Jason Horton": "2",
-	"Marcus Rhodes": "4"
+        "Jason Horton": "2",
+        "Marcus Rhodes": "4"
       },
       "Faculty Officer group 3": {
         "Kathleen Scott": "2",
         "Elizabeth Chapman": "1",
-	"Stacey Monroe": "4",
-	"Michael Murray": "3"
+        "Stacey Monroe": "4",
+        "Michael Murray": "3"
       },
       "Faculty Officer group 4": {
         "Joshua Dunn": "1",
@@ -335,8 +311,8 @@
         "Katherine Aguilar": "2",
         "Kimberly Ball": "1",
         "Nicholas King": "4",
-    "Heather Garcia": "3"
+        "Heather Garcia": "3"
       }
     }
   }
-}	
+}
