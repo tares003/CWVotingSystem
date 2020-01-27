@@ -23,10 +23,10 @@ class Config(object):
     VOTING_START_DATE = parse_datetime(V_START_DATE)
     VOTING_END_DATE = parse_datetime(V_END_DATE)
     NO_FACULTY_OFFICERS_POSITION = ("Faculty Officer", 16)
-    NO_PRECEDENT_POSITION = ("President", 1)
+    NO_PRESIDENT_POSITION = ("President", 1)
     NO_GSU_OFFICERS_POSITION = ("GSU Officers", 3)
     NO_CANDIDATES_PER_POSITION = 4
-    ZODB_DATABASE = 'file:///my/absolute/path/to/Data.fs'
+    ZODB_STORAGE = 'file://./local_database/votes.fs'
 
 
 class ProductionConfig(Config):

@@ -97,15 +97,15 @@ with open("RandomStudents.csv", "r") as students_details_file:
                     if i % 4 == 0 or first_run:  # every 4th candidate put it in a group
 
                         if key == "Faculty Officer":
-                            current_group_gsu_val = ''
+                            current_group_gsu_val = key + ' group {}'.format(val)
                             pass
-                        else:
-                            current_group_gsu_val = key + ' group {}'.format(val) #name of the group
+                        # else:
+
+                        current_group_gsu_val = key + ' group {}'.format(val)  # name of the group
                         first_run = False
-                        val -=1
+                        val -= 1
                     choice["group"] = current_group_gsu_val
                     choice["position"] = key
-
                     choice['campaign'] = fake.text()[:random.randint(5,20)]
                     choice['promises'] = fake.text()
                     choice['logoref'] = None # TODO: GENERATE RANDOM PROFILE IMAGES

@@ -1,16 +1,18 @@
 import csv
+import os
 import sys
 from datetime import datetime, timedelta
 from functools import wraps
 
 from flask import Flask, flash, session, current_app
-from flask import request, render_template, redirect, url_for
+from flask import request, render_template, redirect, url_for, jsonify
 from flask_login import login_user, LoginManager, login_required, logout_user, current_user
 from flask_restplus import reqparse
 from prettytable import PrettyTable
-from flask_zodb import ZODB
+from flask_zodb.flask_zodb import ZODB
 from .exception import *
-from ZODB import FileStorage
+from ZODB import FileStorage, DB
+
 # for local databases
 import transaction
 
@@ -23,8 +25,12 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 # Local Database
-Votesdb = ZODB(app)
-db2 = ZODB(app)
+db = ZODB(app)
+
+# votesdb.create_db(app, 'file://local_database/test.fs')
+
+# For Storing Resuts
+ALL_VOTES = {}
 
 ALL_STUDENTS = []  # storing all the student from the text file
 ALL_CANDIDATES = []  # storing all the candidates from the text file
@@ -279,14 +285,13 @@ def read_candadates_text_file(text_file_name, remove_dups=False, validate_cadida
             if remove_dups:
                 remove_duplicates(ALL_CANDIDATES)
             configs = ["NO_FACULTY_OFFICERS_POSITION",
-                       "NO_PRECEDENT_POSITION",
+                       "NO_PRESIDENT_POSITION",
                        "NO_GSU_OFFICERS_POSITION"]
 
             if validate_cadidate_with_config:  # validates all the confis
                 # confirms if the loaded candidates matches with the config
 
                 for config in configs:
-                    print(config)
                     position_name, current_config_value = get_app_config_variable(config)
                     if current_config_value:
                         if not len(get_cadidates_by_position(position_name)) / get_app_config_variable(
@@ -347,19 +352,20 @@ def hello_world():
     return render_template("welcomePage.html")
 
 
-@app.route('/selection/<position>')
+@app.route('/selection/<position>', methods=["GET", "POST"])
 @login_required
 def selection(position):
     # TODO Check if they already Voted
-
+    connection = db.data
+    print(db.is_connected)
     if request.method == 'GET':
         position = position.lower()
         if position:
             candidates = get_cadidates_by_position(position)
             if candidates:
                 # print(current_user.__dict__)
-                print(current_user.get_user_faculty())
-                print(candidates[0].group)
+                # print(current_user.get_user_faculty())
+                # print(candidates[0].group)
                 if position == 'faculty officer':
                     # Filter out so only returns student's  faculty.
                     candidates = list(filter(lambda x: x.get_user_faculty() == current_user.get_user_faculty(),
@@ -376,22 +382,47 @@ def selection(position):
 
                 candidates = {position: groups}
 
-                return render_template("selection.html", candidates=candidates)
+                return render_template("selection.html", candidates=candidates, endpoint=position)
             else:
                 return "No Candidates for this %s position " % position
         else:
             return "position not provided"
 
     elif request.method == 'POST':
-        selection_data = reqparse.RequestParser()
-        selection_data.add_argument('position', type=str, required=True, help='position data missing')
-        selection_data.add_argument('selection', type=str, required=True, help='no selection')
+        if request.is_json:
+            vote_selections = request.get_json()
+            print(vote_selections)
+            for group in vote_selections.copy().keys():
+                # Checking that ranking meeets, at least one candidate ranked 1 and others optional
+                print(vote_selections[group].values())
+                all_selections = vote_selections[group]
+                if '1' in vote_selections[group].values():
+                    # Removing Default selection
+                    for candidate in vote_selections[group].copy().keys():
+                        if all_selections[candidate] == 'Choose a rank':
+                            print('removing %s' % candidate)
+                            vote_selections[group].pop(candidate)
+                    if list_all_duplicates(vote_selections[group].values()):
+                        return "ERROR- Multiple same rankings selected for group %s" % group, 403
+
+                else:
+                    return "At least one candidate needs to be ranked 1 for group %s" % group, 403
+            global ALL_VOTES
+            if not current_user.get_user_id() in ALL_VOTES.keys():
+                ALL_VOTES[current_user.get_user_id()] = {position: {**vote_selections}}
+            else:
+                ALL_VOTES[current_user.get_user_id()][position] = {**vote_selections}
+            return jsonify(ALL_VOTES[current_user.get_user_id()])
+
+        else:
+            return "Not valid content", 403
 
 
-# @app.route('/selection/<position>')
-# @login_required
-# def users_vote():
-#     pass
+@app.route('/votes')
+@login_required
+def users_vote():
+    global ALL_VOTES
+    return jsonify(ALL_VOTES[current_user.get_user_id()])
 
 
 def view_all_results():
