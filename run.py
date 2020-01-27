@@ -6,6 +6,9 @@ from voting_system.models import Student, Candidate
 import subprocess as sub
 from tkinter import Frame, Tk, BOTH, Text, Menu, END, filedialog, Button
 import csv
+import pandas as pd
+import matplotlib as plt
+from matplotlib.pyplot import subplots
 
 
 # flask run --host=0.0.0.0 fore external access
@@ -39,6 +42,8 @@ class start_server_gui(Frame):
         button_widget = Button(self.parent, text="Start Server", command=self.start_server)
         button_widget.pack()
         button_widget = Button(self.parent, text="Stop Server", command=self.stop_server)
+        button_widget.pack()
+        button_widget = Button(self.parent, text="Visualise Votes", command=visualise_votes)
         button_widget.pack()
 
         self.txt = Text(self)
@@ -75,15 +80,22 @@ class start_server_gui(Frame):
     def stop_server(self):
         raise RuntimeError("Server going down")
 
+def visualise_votes():
+    df = pd.read_csv(r"G:\sampledata.csv")
+    df = df.set_index("first_name")
 
+    fig, ax = subplots()
 
+    df.plot(kind='bar', ax=ax)
 
+    ax.grid(color='gray', linestyle='-', alpha=0.3)
 
+    plt.show()
 
 def main():
     root = Tk()
     ex = start_server_gui(root)
-    root.geometry("300x250+300+300")
+    root.geometry("500x500")
     root.mainloop()
 
 
